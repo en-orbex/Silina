@@ -7,7 +7,6 @@
     <meta name="description" content="Digital business card for Silina Salman — Marketing Assistant at Orbex." />
     <title>Silina Salman — Orbex</title>
 
-    <!-- Premium Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -85,35 +84,16 @@
             align-items: center;
             justify-content: space-between;
             gap: 16px;
-            margin-bottom: 30px;
+            margin-bottom: 12px;   /* ← التعديل: قللنا المسافة للصورة ترجع مكانها */
             animation: fadeDown 0.8s ease both;
         }
 
-        /* ✅ شعار Orbex مكبر جداً - إجبار الحجم بالـ width */
         .brand {
-            height: auto !important;
-            width: 300px !important;      /* عرض ثابت كبير */
-            max-width: 100% !important;
-            min-width: 200px !important;  /* يضمن عدم التصغير */
+            height: 130px;
+            width: auto;
+            max-width: 400px;
             object-fit: contain;
             filter: drop-shadow(0 2px 12px rgba(0, 0, 0, 0.8));
-            flex-shrink: 0;
-        }
-
-        /* ✅ في التلفون نخليه أكبر */
-        @media (max-width: 480px) {
-            .brand {
-                width: 220px !important;   /* عرض كبير جداً للتلفون */
-                min-width: 180px !important;
-            }
-        }
-
-        /* للشاشات الصغيرة جداً */
-        @media (max-width: 390px) {
-            .brand {
-                width: 200px !important;
-                min-width: 160px !important;
-            }
         }
 
         .live {
@@ -499,7 +479,6 @@
             transform: scaleX(1);
         }
 
-        /* تعديلات إضافية للهواتف */
         @media (max-width: 390px) {
             .photo-wrap {
                 height: 300px;
@@ -515,6 +494,10 @@
             }
             .save-btn {
                 grid-column: span 1;
+            }
+            .brand {
+                height: 85px;
+                max-width: 280px;
             }
         }
     </style>
