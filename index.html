@@ -76,7 +76,7 @@
         .shell {
             width: min(100%, var(--max));
             margin: auto;
-            padding: 8px 18px 34px;   /* ✅ قللنا المسافة من فوق من 22px لـ 8px */
+            padding: 0px 18px 34px;   /* ✅ قللنا المسافة من فوق لـ 0 */
             position: relative;
         }
 
@@ -85,7 +85,7 @@
             align-items: center;
             justify-content: space-between;
             gap: 16px;
-            margin-bottom: 0px;       /* ✅ قللنا المسافة بين اللوقو والصورة لـ 0 */
+            margin-bottom: -12px;      /* ✅ سالبة عشان نشيل كل المسافة بين اللوقو والبطاقة */
             animation: fadeDown 0.8s ease both;
         }
 
