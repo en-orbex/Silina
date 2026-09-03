@@ -15,8 +15,10 @@
     <style>
         :root {
             --bg: #081F3B;
-            --brand-accent: #00C9FF;
-            --brand-accent-hover: #33D6FF;
+            /* 🔴 تغيير اللون الأساسي إلى الأحمر المطلوب */
+            --brand-accent: #EE3344;
+            --brand-accent-hover: #FF5566; /* درجة أفتح للـ Hover */
+
             --glass-bg: rgba(255, 255, 255, 0.06);
             --glass-border: rgba(255, 255, 255, 0.10);
             --glass-highlight: rgba(255, 255, 255, 0.12);
@@ -51,7 +53,7 @@
             z-index: -1;
             pointer-events: none;
             background:
-                radial-gradient(circle at 75% 15%, rgba(0, 201, 255, 0.12), transparent 45%),
+                radial-gradient(circle at 75% 15%, rgba(238, 51, 68, 0.15), transparent 45%),
                 radial-gradient(circle at 25% 85%, rgba(255, 255, 255, 0.04), transparent 40%),
                 radial-gradient(circle at 50% 50%, rgba(8, 31, 59, 1), transparent 70%);
             animation: bgPulse 14s infinite alternate;
@@ -76,7 +78,7 @@
         .shell {
             width: min(100%, var(--max));
             margin: auto;
-            padding: 0px 18px 34px;   /* ✅ قللنا المسافة من فوق لـ 0 */
+            padding: 0px 18px 34px;
             position: relative;
         }
 
@@ -85,11 +87,10 @@
             align-items: center;
             justify-content: space-between;
             gap: 16px;
-            margin-bottom: -12px;      /* ✅ سالبة عشان نشيل كل المسافة بين اللوقو والبطاقة */
+            margin-bottom: -12px;
             animation: fadeDown 0.8s ease both;
         }
 
-        /* ✅ حجم اللوقو من الملف الجديد (عرض ثابت كبير) */
         .brand {
             height: auto !important;
             width: 300px !important;
@@ -239,6 +240,7 @@
             font-weight: 600;
         }
 
+        /* 🔴 تطبيق اللون الجديد على اسم Salman */
         .accent {
             color: var(--brand-accent);
         }
@@ -264,37 +266,38 @@
             font-family: 'Manrope', sans-serif;
             cursor: pointer;
             backdrop-filter: blur(10px);
-            background: rgba(255, 255, 255, 0.04);
             transition: all 0.3s ease;
         }
 
         .btn:hover {
-            background: rgba(255, 255, 255, 0.10);
+            transform: translateY(-2px);
         }
 
+        /* 🔴 الزر الأساسي (Call) باللون الأحمر */
         .btn.primary {
             background: var(--brand-accent);
             border: none;
-            box-shadow: 0 10px 30px rgba(0, 201, 255, 0.25);
-            color: #081F3B;
+            box-shadow: 0 10px 30px rgba(238, 51, 68, 0.35);
+            color: #FFFFFF;
         }
 
         .btn.primary:hover {
             background: var(--brand-accent-hover);
-            box-shadow: 0 15px 40px rgba(0, 201, 255, 0.45);
-            transform: translateY(-2px);
-            color: #081F3B;
+            box-shadow: 0 15px 40px rgba(238, 51, 68, 0.55);
+            color: #FFFFFF;
         }
 
+        /* 🔴 الأزرار الثانوية (Email, Save) باللون الأحمر أيضاً */
         .btn.secondary {
-            background: rgba(255, 255, 255, 0.06);
-            border: 1px solid var(--glass-border);
-            color: #fff;
+            background: rgba(238, 51, 68, 0.08);
+            border: 1px solid var(--brand-accent);
+            color: var(--brand-accent);
         }
 
         .btn.secondary:hover {
-            background: rgba(255, 255, 255, 0.12);
-            border-color: rgba(255, 255, 255, 0.3);
+            background: rgba(238, 51, 68, 0.18);
+            border-color: var(--brand-accent-hover);
+            color: var(--brand-accent-hover);
         }
 
         .save-btn {
@@ -368,7 +371,7 @@
             content: "";
             position: absolute;
             inset: 0;
-            background: linear-gradient(120deg, transparent 20%, rgba(0, 201, 255, 0.12) 50%, transparent 80%);
+            background: linear-gradient(120deg, transparent 20%, rgba(238, 51, 68, 0.15) 50%, transparent 80%);
             transform: translateX(-120%);
             transition: transform 0.7s ease;
         }
@@ -378,7 +381,7 @@
         }
 
         .social:hover {
-            background: rgba(0, 201, 255, 0.08);
+            background: rgba(238, 51, 68, 0.10);
             border-color: var(--brand-accent);
             transform: translateY(-5px);
             color: #fff;
@@ -388,7 +391,7 @@
             width: 20px;
             height: 20px;
             color: #fff;
-            filter: drop-shadow(0 0 5px rgba(0, 201, 255, 0.2));
+            filter: drop-shadow(0 0 5px rgba(238, 51, 68, 0.3));
         }
 
         .info {
