@@ -7,6 +7,7 @@
     <meta name="description" content="Digital business card for Silina Salman — Marketing Assistant at Orbex." />
     <title>Silina Salman — Orbex</title>
 
+    <!-- Premium Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -84,17 +85,35 @@
             align-items: center;
             justify-content: space-between;
             gap: 16px;
-            margin-bottom: 4px;   /* المسافة بين الشعار والبطاقة صارت ضئيلة */
+            margin-bottom: 4px;   /* ✅ المسافة ضئيلة عشان الصورة ما تنزل */
             animation: fadeDown 0.8s ease both;
         }
 
-        /* حجم الشعار المناسب (الكويس) */
+        /* ✅ حجم اللوقو من الملف الجديد (عرض ثابت كبير) */
         .brand {
-            height: 76px;
-            width: auto;
-            max-width: 240px;
+            height: auto !important;
+            width: 300px !important;      /* عرض ثابت كبير */
+            max-width: 100% !important;
+            min-width: 200px !important;  /* يضمن عدم التصغير */
             object-fit: contain;
             filter: drop-shadow(0 2px 12px rgba(0, 0, 0, 0.8));
+            flex-shrink: 0;
+        }
+
+        /* ✅ في التلفون نخليه أكبر حسب الملف الجديد */
+        @media (max-width: 480px) {
+            .brand {
+                width: 220px !important;   /* عرض كبير جداً للتلفون */
+                min-width: 180px !important;
+            }
+        }
+
+        /* للشاشات الصغيرة جداً */
+        @media (max-width: 390px) {
+            .brand {
+                width: 200px !important;
+                min-width: 160px !important;
+            }
         }
 
         .live {
@@ -169,6 +188,8 @@
             inset: 0;
             background: linear-gradient(to bottom, transparent 50%, rgba(8, 31, 59, 0.92) 100%);
         }
+
+        /* ✅ تم حذف شارة Orbex من على الصورة */
 
         .hero-copy {
             padding: 24px 12px 15px;
@@ -480,6 +501,7 @@
             transform: scaleX(1);
         }
 
+        /* تعديلات إضافية للهواتف */
         @media (max-width: 390px) {
             .photo-wrap {
                 height: 300px;
@@ -496,10 +518,6 @@
             .save-btn {
                 grid-column: span 1;
             }
-            .brand {
-                height: 48px;
-                max-width: 160px;
-            }
         }
     </style>
 </head>
@@ -507,6 +525,7 @@
 
     <main class="shell">
         <header class="topbar">
+            <!-- ✅ اللوقو بالحجم المطلوب (عرض ثابت كبير) -->
             <img class="brand" src="assets/orbex-logo.jpg" alt="Orbex" />
             <div class="live"><i></i> Live Card</div>
         </header>
@@ -514,6 +533,7 @@
         <section class="hero" id="tiltElement">
             <div class="photo-wrap">
                 <img class="photo" src="assets/silina-salman.jpg" alt="Silina Salman" />
+                <!-- تم حذف شارة Orbex -->
             </div>
             <div class="hero-copy">
                 <div class="eyebrow">Professional Profile</div>
@@ -540,6 +560,7 @@
         <section class="section scroll-section">
             <div class="social-title reveal">Connect</div>
             <div class="socials reveal">
+                <!-- ✅ LinkedIn في البداية -->
                 <a class="social" href="https://www.linkedin.com/company/orbex-limited/" target="_blank" rel="noopener">
                     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M5.2 3.5A1.8 1.8 0 1 1 5.2 7a1.8 1.8 0 0 1 0-3.5zM3.7 8.5h3v11.8h-3V8.5zm5 0h2.9v1.6h.1c.4-.8 1.5-2 3.5-2 3.1 0 3.7 2 3.7 4.7v7.5h-3v-6.7c0-1.6 0-3.6-2.2-3.6s-2.5 1.7-2.5 3.5v6.8h-3V8.5z"/></svg>LinkedIn
                 </a>
@@ -552,6 +573,7 @@
                 <a class="social" href="https://www.tiktok.com/@orbexofficial" target="_blank" rel="noopener">
                     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M15 3c.3 2.1 1.5 3.5 3.6 3.7V10c-1.4 0-2.7-.4-3.8-1.1v6.2a5.3 5.3 0 1 1-4.6-5.2v3.3a2 2 0 1 0 1.5 1.9V3H15z"/></svg>TikTok
                 </a>
+                <!-- ✅ Instagram في النهاية مع امتداد 4 أعمدة -->
                 <a class="social" href="https://www.instagram.com/orbex_fx/?hl=en" target="_blank" rel="noopener" style="grid-column:span 4">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r=".7" fill="currentColor"/></svg>Instagram
                 </a>
