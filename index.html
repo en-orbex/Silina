@@ -93,11 +93,11 @@
             animation: fadeDown 0.8s ease both;
         }
 
-        /* شعار Orbex مكبر */
+        /* ✅ شعار Orbex مكبر الآن (على جميع الشاشات) */
         .brand {
-            height: 80px;          /* زيادة الارتفاع */
+            height: 76px;          /* زيادة الارتفاع بشكل واضح */
             width: auto;
-            max-width: 250px;      /* زيادة العرض الأقصى */
+            max-width: 240px;      /* زيادة العرض الأقصى */
             object-fit: contain;
             filter: drop-shadow(0 2px 12px rgba(0, 0, 0, 0.8));
         }
@@ -495,7 +495,7 @@
             transform: scaleX(1);
         }
 
-        /* Responsive */
+        /* ✅ Responsive - تكبير الشعار على الهواتف أيضاً */
         @media (max-width: 390px) {
             .photo-wrap {
                 height: 300px;
@@ -512,10 +512,10 @@
             .save-btn {
                 grid-column: span 1;
             }
-            /* تعديل بسيط للشعار في الشاشات الصغيرة جداً */
+            /* ✅ تم تكبير الشعار في التلفون بشكل واضح */
             .brand {
-                height: 32px;
-                max-width: 120px;
+                height: 48px;        /* كانت 32px */
+                max-width: 160px;    /* كانت 120px */
             }
         }
     </style>
@@ -524,7 +524,7 @@
 
     <main class="shell">
         <header class="topbar">
-            <!-- شعار Orbex مكبر الآن -->
+            <!-- شعار Orbex مكبر الآن في الزاوية -->
             <img class="brand" src="assets/orbex-logo.jpg" alt="Orbex" />
             <div class="live"><i></i> Live Card</div>
         </header>
