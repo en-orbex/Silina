@@ -84,14 +84,15 @@
             align-items: center;
             justify-content: space-between;
             gap: 16px;
-            margin-bottom: 12px;   /* ← التعديل: قللنا المسافة للصورة ترجع مكانها */
+            margin-bottom: 4px;   /* المسافة بين الشعار والبطاقة صارت ضئيلة */
             animation: fadeDown 0.8s ease both;
         }
 
+        /* حجم الشعار المناسب (الكويس) */
         .brand {
-            height: 130px;
+            height: 76px;
             width: auto;
-            max-width: 400px;
+            max-width: 240px;
             object-fit: contain;
             filter: drop-shadow(0 2px 12px rgba(0, 0, 0, 0.8));
         }
@@ -496,8 +497,8 @@
                 grid-column: span 1;
             }
             .brand {
-                height: 85px;
-                max-width: 280px;
+                height: 48px;
+                max-width: 160px;
             }
         }
     </style>
