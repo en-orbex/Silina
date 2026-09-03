@@ -89,13 +89,31 @@
             animation: fadeDown 0.8s ease both;
         }
 
-        /* ✅ شعار Orbex مكبر جداً (أضخم إصدار) */
+        /* ✅ شعار Orbex مكبر جداً - إجبار الحجم بالـ width */
         .brand {
-            height: 130px;          /* زيادة ضخمة */
-            width: auto;
-            max-width: 400px;       /* زيادة ضخمة */
+            height: auto !important;
+            width: 300px !important;      /* عرض ثابت كبير */
+            max-width: 100% !important;
+            min-width: 200px !important;  /* يضمن عدم التصغير */
             object-fit: contain;
             filter: drop-shadow(0 2px 12px rgba(0, 0, 0, 0.8));
+            flex-shrink: 0;
+        }
+
+        /* ✅ في التلفون نخليه أكبر */
+        @media (max-width: 480px) {
+            .brand {
+                width: 220px !important;   /* عرض كبير جداً للتلفون */
+                min-width: 180px !important;
+            }
+        }
+
+        /* للشاشات الصغيرة جداً */
+        @media (max-width: 390px) {
+            .brand {
+                width: 200px !important;
+                min-width: 160px !important;
+            }
         }
 
         .live {
@@ -481,7 +499,7 @@
             transform: scaleX(1);
         }
 
-        /* ✅ تكبير أضخم للشعار على الهواتف */
+        /* تعديلات إضافية للهواتف */
         @media (max-width: 390px) {
             .photo-wrap {
                 height: 300px;
@@ -498,11 +516,6 @@
             .save-btn {
                 grid-column: span 1;
             }
-            /* ✅ تم التكبير للحد الأقصى على التلفون */
-            .brand {
-                height: 85px;        /* زيادة ضخمة */
-                max-width: 280px;    /* زيادة ضخمة */
-            }
         }
     </style>
 </head>
@@ -510,7 +523,6 @@
 
     <main class="shell">
         <header class="topbar">
-            <!-- شعار Orbex أضخم ما يكون -->
             <img class="brand" src="assets/orbex-logo.jpg" alt="Orbex" />
             <div class="live"><i></i> Live Card</div>
         </header>
